@@ -191,3 +191,44 @@ function startSwipe(e) {
     document.addEventListener("touchmove", onMove);
     document.addEventListener("touchend", onEnd);
 }
+
+async function deleteTransaction(id) {
+    if (!confirm("Are you sure you want to yeet this transaction forever?"))
+        return;
+
+    try {
+        const response = await fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ action: "delete", id: id }),
+        });
+
+        if (response.ok) {
+            console.log("🚀 Row deleted from Sheets");
+            await fetchTransactions(); // Refresh the list
+        }
+    } catch (error) {
+        console.error("Delete failed:", error);
+        alert("Could not delete. Check your connection.");
+    }
+}
+
+function editTransaction(id) {
+    // Find the transaction in our local array
+    const transaction = transactions.find((t) => t.timestamp == id);
+    if (!transaction) return;
+
+    // Populate the form fields
+    document.getElementById("date").value = transaction.date;
+    document.getElementById("amount").value = transaction.amount;
+    document.getElementById("description").value = transaction.description;
+    document.getElementById("sourceOfPayment").value =
+        transaction.sourceofpayment;
+    document.getElementById("category").value = transaction.category;
+
+    // Scroll back to top so user sees the form
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // Optional: Delete the old one so the "Yeet" button acts as an update
+    // deleteTransaction(id);
+}
