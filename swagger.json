@@ -1,0 +1,36 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "YEET! API",
+      "version": "1.0.0",
+      "description": "API for the YEET! Transaction Tracker"
+    },
+    "paths": {
+      "/api/transactions": {
+        "get": {
+          "summary": "Get all transactions",
+          "responses": { "200": { "description": "A list of transactions" } }
+        },
+        "post": {
+          "summary": "Add a new transaction",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "date": { "type": "string" },
+                    "amount": { "type": "number" },
+                    "description": { "type": "string" },
+                    "source": { "type": "string" },
+                    "category": { "type": "string" }
+                  }
+                }
+              }
+            }
+          },
+          "responses": { "200": { "description": "Success" } }
+        }
+      }
+    }
+  }

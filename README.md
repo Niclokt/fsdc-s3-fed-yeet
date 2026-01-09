@@ -1,9 +1,12 @@
 # Yeet - Spending Tracker
 
-`One or two paragraphs providing an overview of your project. Tell us about your project.`
-
 Yeet tracks your expenditure and neatly compiles your inputs into a csv for your own further analysis when needed.
 Taking expenditure tracking off your mind is just a stone's throw away - Yeet!
+
+## Links
+
+-   [GitHub Page](https://github.com/Niclokt/fsdc-s3-fed-yeet.git)
+-   [Live Link](https://fsdc-s3-fed-yeet.vercel.app/)
 
 ## Design Process
 
