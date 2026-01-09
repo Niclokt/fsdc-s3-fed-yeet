@@ -41,7 +41,7 @@ form.addEventListener("submit", async (e) => {
         amount: parseFloat(document.getElementById("amount").value).toFixed(2),
         description:
             document.getElementById("description").value || "No Description",
-        source: document.getElementById("sourceOfPayment").value,
+        sourceOfPayment: document.getElementById("sourceOfPayment").value,
         category: document.getElementById("category").value,
     };
 
@@ -110,7 +110,7 @@ function renderHistory() {
                         { day: "numeric", month: "short", year: "numeric" }
                     )}</p>
                     <p class="text-gray-600">${t.description}</p>
-                    <p class="text-xs text-gray-500">${t.source} • ${
+                    <p class="text-xs text-gray-500">${t.sourceOfPayment} • ${
                 t.category
             }</p>
                 </div>

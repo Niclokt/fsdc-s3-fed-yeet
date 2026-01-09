@@ -19,6 +19,7 @@
                       "date": "2023-10-27",
                       "amount": 15.50,
                       "description": "Lunch",
+                      "sourceOfPayment": "UOB Credit Card",
                       "category": "Food"
                     }
                   ]
@@ -42,7 +43,7 @@
                     "date": { "type": "string", "format": "date" },
                     "amount": { "type": "number" },
                     "description": { "type": "string" },
-                    "source": { "type": "string" },
+                    "sourceOfPayment": { "type": "string" },
                     "category": { "type": "string" }
                   }
                 }
