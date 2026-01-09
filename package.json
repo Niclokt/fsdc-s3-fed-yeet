@@ -1,0 +1,24 @@
+{
+  "name": "fsdc-s3-fed-yeet",
+  "version": "1.0.0",
+  "description": "`One or two paragraphs providing an overview of your project. Tell us about your project.`",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "20.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Niclokt/fsdc-s3-fed-yeet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Niclokt/fsdc-s3-fed-yeet/issues"
+  },
+  "homepage": "https://github.com/Niclokt/fsdc-s3-fed-yeet#readme"
+}
