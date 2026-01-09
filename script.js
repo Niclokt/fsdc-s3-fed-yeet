@@ -215,7 +215,7 @@ async function deleteTransaction(id) {
 
 function editTransaction(id) {
     // Find the transaction in our local array
-    const transaction = transactions.find((t) => t.timestamp == id);
+    const transaction = transactions.find((t) => t.id == id);
     if (!transaction) return;
 
     // Populate the form fields
