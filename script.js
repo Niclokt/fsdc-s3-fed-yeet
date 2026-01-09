@@ -45,6 +45,8 @@ form.addEventListener("submit", async (e) => {
         category: document.getElementById("category").value,
     };
 
+    console.log("🚀 Yeeting data:", newEntry);
+
     try {
         const response = await fetch(API_URL, {
             method: "POST",
