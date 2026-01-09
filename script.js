@@ -41,7 +41,7 @@ form.addEventListener("submit", async (e) => {
         amount: parseFloat(document.getElementById("amount").value).toFixed(2),
         description:
             document.getElementById("description").value || "No Description",
-        source: document.getElementById("source").value,
+        source: document.getElementById("sourceOfPayment").value,
         category: document.getElementById("category").value,
     };
 
