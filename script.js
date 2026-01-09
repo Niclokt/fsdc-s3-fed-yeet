@@ -112,7 +112,7 @@ function renderHistory() {
                         { day: "numeric", month: "short", year: "numeric" }
                     )}</p>
                     <p class="text-gray-600">${t.description}</p>
-                    <p class="text-xs text-gray-500">${t.sourceOfPayment} • ${
+                    <p class="text-xs text-gray-500">${t.sourceofpayment} • ${
                 t.category
             }</p>
                 </div>
