@@ -106,7 +106,7 @@ function renderHistory() {
             container.className = "swipe-container mb-2 shadow-sm";
 
             container.innerHTML = `
-                <div class="action-buttons bg-gray-300">
+                <div class="action-buttons bg-transparent">
                     <button onclick="editTransaction('${
                         t.id
                     }')" class="p-3 bg-white rounded-xl shadow-sm hover:bg-gray-100">
