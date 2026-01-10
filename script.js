@@ -214,11 +214,13 @@ async function deleteTransaction(id) {
 }
 
 function editTransaction(id) {
-    // Find the transaction in our local array
     const transaction = transactions.find((t) => t.id == id);
     if (!transaction) return;
 
-    // Populate the form fields
+    // 1. Set the hidden ID field
+    document.getElementById("editId").value = id;
+
+    // 2. Populate fields
     document.getElementById("date").value = transaction.date;
     document.getElementById("amount").value = transaction.amount;
     document.getElementById("description").value = transaction.description;
@@ -226,9 +228,47 @@ function editTransaction(id) {
         transaction.sourceofpayment;
     document.getElementById("category").value = transaction.category;
 
-    // Scroll back to top so user sees the form
+    // 3. Change button text to show we are editing
+    yeetBtn.innerText = "UPDATE YEET";
     window.scrollTo({ top: 0, behavior: "smooth" });
-
-    // Optional: Delete the old one so the "Yeet" button acts as an update
-    // deleteTransaction(id);
 }
+
+// --- Update the Submit Listener ---
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const editId = document.getElementById("editId").value;
+
+    yeetBtn.disabled = true;
+    yeetBtn.innerText = editId ? "UPDATING..." : "YEETING...";
+
+    const newEntry = {
+        action: editId ? "edit" : "create", // Tell Apps Script what to do
+        id: editId || new Date().getTime().toString(), // Use existing ID or new one
+        date: document.getElementById("date").value,
+        amount: parseFloat(document.getElementById("amount").value).toFixed(2),
+        description:
+            document.getElementById("description").value || "No Description",
+        sourceofpayment: document.getElementById("sourceOfPayment").value,
+        category: document.getElementById("category").value,
+    };
+
+    try {
+        const response = await fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newEntry),
+        });
+
+        if (response.ok) {
+            form.reset();
+            document.getElementById("editId").value = ""; // Clear edit mode
+            await fetchTransactions();
+        }
+    } catch (error) {
+        console.error(error);
+        alert("Action failed!");
+    } finally {
+        yeetBtn.innerText = "YEET!";
+        yeetBtn.disabled = false;
+    }
+});
