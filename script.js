@@ -241,12 +241,12 @@ form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const editId = document.getElementById("editId").value;
 
-    yeetBtn.disabled = true;
+    yeetBtn.disabled = false;
     yeetBtn.innerText = editId ? "UPDATING..." : "YEETING...";
 
     const newEntry = {
         action: editId ? "edit" : "create", // Tell Apps Script what to do
-        id: editId || new Date().getTime().toString(), // Use existing ID or new one
+        id: editId ? editId : new Date().getTime().toString(), // Use existing ID or new one
         date: document.getElementById("date").value,
         amount: parseFloat(document.getElementById("amount").value).toFixed(2),
         description:
