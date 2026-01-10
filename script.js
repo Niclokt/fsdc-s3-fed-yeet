@@ -229,6 +229,7 @@ function editTransaction(id) {
     document.getElementById("category").value = transaction.category;
 
     // 3. Change button text to show we are editing
+    yeetBtn.disabled = false;
     yeetBtn.innerText = "UPDATE YEET";
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
