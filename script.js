@@ -193,7 +193,9 @@ function startSwipe(e) {
 }
 
 async function deleteTransaction(id) {
-    if (!confirm("Are you sure you want to yeet this transaction forever?"))
+    if (
+        !confirm("Are you sure you want to yeet this to the land of no return?")
+    )
         return;
 
     try {
@@ -270,6 +272,6 @@ form.addEventListener("submit", async (e) => {
         alert("Action failed!");
     } finally {
         yeetBtn.innerText = "YEET!";
-        yeetBtn.disabled = false;
+        yeetBtn.disabled = true;
     }
 });
