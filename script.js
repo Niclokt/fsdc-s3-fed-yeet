@@ -223,7 +223,13 @@ function editTransaction(id) {
     document.getElementById("editId").value = id;
 
     // 2. Populate fields
-    document.getElementById("date").value = transaction.date;
+    // Convert the date string to the "yyyy-MM-dd" format
+    const dateObject = new Date(transaction.date);
+    const year = dateObject.getFullYear();
+    const month = (dateObject.getMonth() + 1).toString().padStart(2, "0"); // Month is 0-indexed
+    const day = dateObject.getDate().toString().padStart(2, "0");
+    document.getElementById("date").value = `${year}-${month}-${day}`;
+
     document.getElementById("amount").value = transaction.amount;
     document.getElementById("description").value = transaction.description;
     document.getElementById("sourceOfPayment").value =
