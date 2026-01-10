@@ -38,25 +38,28 @@ In this section, you should go over the different parts of your project, and des
 
 -   **Dynamic History Retrieval** – allows users to view their previous expenditure records by having the application fetch data from the Google Sheets API automatically whenever the page loads or a new entry is added.
 
--   **Collapsible Chronological Groups** – allows users to organize and navigate large amounts of data by having the application auto-sort transactions by month and year into expandable `<details>` sections.
 
 -   **Visual Spending Summaries** – allows users to quickly scan individual costs by having them view transaction cards that display the amount in a large, bold font alongside the payment source and category.
 
 -   **Custom Responsive Interface** – allows users to track transactions on any device by having the application utilize Tailwind CSS to adjust the layout from a single column on mobile to a side-by-side view on desktop.
 
+-   **Transaction Deletion** – allows users to remove mistakes by having them click a "Delete" button on a transaction card, which sends a request to the Google Sheets API to remove that specific row.
+
+-   **Edit Existing Transactions** – allows users to fix typos by having them click an "Edit" icon that populates the "New Transaction" form with the existing data for modification.
+
 <br>
 
 ### Features Left to Implement
 
+-   **Collapsible Chronological Groups** – allows users to organize and navigate large amounts of data by having the application auto-sort transactions by month and year into expandable `<details>` sections.
+
+
 -   **Total Expenditure Calculation** – allows users to see their total expendture at a glance by having the application sum up all amounts in the fetched transaction list and display it at the top of the history section.
 
--   **Transaction Deletion** – allows users to remove mistakes by having them click a "Delete" button on a transaction card, which sends a request to the Google Sheets API to remove that specific row.
 
 -   **Data Filtering and Search** – allows users to find specific expenses by having them type into a search bar or select a category filter to hide transactions that don't match.
 
 -   **Category-Based Analytics** – allows users to visualize their habits by having the application generate a pie chart (using a library like Chart.js) showing the percentage of spending on "Food" vs. "Bills."
-
--   **Edit Existing Transactions** – allows users to fix typos by having them click an "Edit" icon that populates the "New Transaction" form with the existing data for modification.
 
 -   **User Authentication** – allows multiple users to have private sheets by having them log in ensuring that one person's transaction history isn't visible to everyone else using the app.
 
